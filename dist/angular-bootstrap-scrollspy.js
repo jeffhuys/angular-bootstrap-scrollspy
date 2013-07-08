@@ -1,15 +1,15 @@
 /**
- * angular-bootstrap-spy
+ * angular-bootstrap-scrollspy
  * @version v0.0.2 - 2013-07-08
- * @link https://github.com/mgcrea/angular-bootstrap-spy
+ * @link https://github.com/mgcrea/angular-bootstrap-scrollspy
  * @author Olivier Louvignes <olivier@mg-crea.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
 'use strict';
-angular.module('mgcrea.bootstrap.spy', [
+angular.module('mgcrea.bootstrap.scrollspy', [
   'mgcrea.jquery',
   'mgcrea.debounce'
-]).directive('spy', [
+]).directive('bs-scrollspy', [
   '$window',
   '$location',
   '$routeParams',

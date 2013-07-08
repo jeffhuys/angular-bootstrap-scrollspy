@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('mgcrea.bootstrap.spy', ['mgcrea.jquery', 'mgcrea.debounce'])
+angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery', 'mgcrea.debounce'])
 
-  .directive('spy', function($window, $location, $routeParams, debounce, $) {
+  .directive('bs-scrollspy', function($window, $location, $routeParams, debounce, $) {
 
     var slice = Array.prototype.slice;
 

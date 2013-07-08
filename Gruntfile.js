@@ -159,7 +159,7 @@ module.exports = function(grunt) {
         tagName: 'v<%= pkg.version %>',
         tagMessage: 'chore(release): bump v<%= pkg.version %>',
         commitFiles: ['-a'],
-        pushTo: 'github'
+        pushTo: 'mgcrea'
       }
     }
   });
