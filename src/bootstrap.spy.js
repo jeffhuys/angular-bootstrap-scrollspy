@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mgcrea.bootstrap.spy', ['mgcrea.$', 'mgcrea.debounce'])
+angular.module('mgcrea.bootstrap.spy', ['mgcrea.jquery', 'mgcrea.debounce'])
 
   .directive('spy', function($window, $location, $routeParams, debounce, $) {
 
