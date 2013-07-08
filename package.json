@@ -1,12 +1,12 @@
 {
-  "name": "angular-bootstrap.spy",
+  "name": "angular-bootstrap-spy",
   "version": "0.0.1",
-  "description": "bootstrap.spy",
+  "description": "bootstrap-spy",
   "keywords": [
     "angular"
   ],
-  "homepage": "https://github.com/mgcrea/bootstrap.spy",
-  "bugs": "https://github.com/mgcrea/bootstrap.spy/issues",
+  "homepage": "https://github.com/mgcrea/angular-bootstrap-spy",
+  "bugs": "https://github.com/mgcrea/angular-bootstrap-spy/issues",
   "author": {
     "name": "Olivier Louvignes",
     "email": "olivier@mg-crea.com",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgcrea/bootstrap.spy.git"
+    "url": "https://github.com/mgcrea/angular-bootstrap-spy.git"
   },
   "licenses": [
     {
