@@ -2,7 +2,7 @@
 
 angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery', 'mgcrea.debounce'])
 
-  .directive('bs-scrollspy', function($window, $location, $routeParams, debounce, $) {
+  .directive('bsScrollspy', function($window, $location, $routeParams, debounce, $) {
 
     var slice = Array.prototype.slice;
 
@@ -68,7 +68,10 @@ angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery', 'mgcrea.debounce'
       restrict: 'EAC',
       link: function postLink(scope, iElement, iAttrs) {
 
-        var refreshPositions = function() { refresh(iAttrs); };
+        var refreshPositions = function() {
+          refresh(iAttrs);
+          process(scope, iElement, iAttrs);
+        };
         var debouncedRefresh = debounce(refreshPositions, 300);
 
         scope.$on('$viewContentLoaded', debouncedRefresh);
