@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery', 'mgcrea.debounce'])
+angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery'])
 
-  .directive('bsScrollspy', function($window, $location, $routeParams, debounce, $) {
+  .directive('bsScrollspy', function($window, $location, $routeParams, jQuery, debounce) {
 
     var slice = Array.prototype.slice;
 
@@ -14,9 +14,9 @@ angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery', 'mgcrea.debounce'
     var refresh = function(options) {
       offsets = [];
       targets = [];
-      slice.call($(options.target).children())
+      slice.call(jQuery(options.target).children())
         .map(function(el) {
-          return [$(el).offset().top, el.id];
+          return [jQuery(el).offset().top, el.id];
         })
         .sort(function(a, b) {
           return a[0] - b[0];
@@ -56,8 +56,8 @@ angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery', 'mgcrea.debounce'
       activeTarget = selector;
 
       // Toggle active class on elements
-      $(options.target + ' > .active').removeClass('active');
-      $('#' + activeTarget).addClass('active');
+      jQuery(options.target + ' > .active').removeClass('active');
+      jQuery('#' + activeTarget).addClass('active');
 
       // Use $location.search to trigger dom changes
       scope.$apply($location.search(options.search || 'page', selector));
