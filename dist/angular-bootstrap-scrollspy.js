@@ -1,21 +1,18 @@
 /**
  * angular-bootstrap-scrollspy
- * @version v0.0.2 - 2013-07-08
+ * @version v0.2.1 - 2013-07-24
  * @link https://github.com/mgcrea/angular-bootstrap-scrollspy
  * @author Olivier Louvignes <olivier@mg-crea.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
 'use strict';
-angular.module('mgcrea.bootstrap.scrollspy', [
-  'mgcrea.jquery',
-  'mgcrea.debounce'
-]).directive('bs-scrollspy', [
+angular.module('mgcrea.bootstrap.scrollspy', ['mgcrea.jquery']).directive('bsScrollspy', [
   '$window',
   '$location',
   '$routeParams',
+  'jQuery',
   'debounce',
-  '$',
-  function ($window, $location, $routeParams, debounce, $) {
+  function ($window, $location, $routeParams, jQuery, debounce) {
     var slice = Array.prototype.slice;
     var offset;
     var offsets = [];
@@ -24,9 +21,9 @@ angular.module('mgcrea.bootstrap.scrollspy', [
     var refresh = function (options) {
       offsets = [];
       targets = [];
-      slice.call($(options.target).children()).map(function (el) {
+      slice.call(jQuery(options.target).children()).map(function (el) {
         return [
-          $(el).offset().top,
+          jQuery(el).offset().top,
           el.id
         ];
       }).sort(function (a, b) {
@@ -55,8 +52,8 @@ angular.module('mgcrea.bootstrap.scrollspy', [
     };
     var activate = function (scope, selector, options) {
       activeTarget = selector;
-      $(options.target + ' > .active').removeClass('active');
-      $('#' + activeTarget).addClass('active');
+      jQuery(options.target + ' > .active').removeClass('active');
+      jQuery('#' + activeTarget).addClass('active');
       scope.$apply($location.search(options.search || 'page', selector));
     };
     return {
@@ -64,6 +61,7 @@ angular.module('mgcrea.bootstrap.scrollspy', [
       link: function postLink(scope, iElement, iAttrs) {
         var refreshPositions = function () {
           refresh(iAttrs);
+          process(scope, iElement, iAttrs);
         };
         var debouncedRefresh = debounce(refreshPositions, 300);
         scope.$on('$viewContentLoaded', debouncedRefresh);
