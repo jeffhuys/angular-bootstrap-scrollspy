@@ -5,7 +5,9 @@ The scrollspy behavior enables to automatically update nav targets based on scro
 
 ## Getting Started
 
-Download the [production version][min] or the [development version][max].
++ Install with bower, `bower install angular-bootstrap-scrollspy --save`
+
++ Or download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/mgcrea/jquery-bootstrap-scrollspy/master/dist/angular-bootstrap-scrollspy.min.js
 [max]: https://raw.github.com/mgcrea/jquery-bootstrap-scrollspy/master/dist/angular-bootstrap-scrollspy.js
